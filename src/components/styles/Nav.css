@@ -1,0 +1,41 @@
+.nav-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.nav-logo h1 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.grey {
+  
+  font-weight: 500;
+}
+
+.search__input {
+  position: absolute;
+  border: 1px solid #000000;
+  padding: 10px 20px;
+  border-radius: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  position: absolute;
+}
