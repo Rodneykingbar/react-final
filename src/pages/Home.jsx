@@ -46,43 +46,43 @@ const Home = ({ movie }) => {
           <>
             <div className="movie-card">
               <div className="movie-card__img--skeleton"></div>
-              <h1 className="movie-card__title--skeleton"></h1>
-              <h1 className="movie-card__year--skeleton"></h1>
+              <div className="movie-card__title--skeleton"></div>
+              <div className="movie-card__year--skeleton"></div>
             </div>
             <div className="movie-card">
               <div className="movie-card__img--skeleton"></div>
-              <h1 className="movie-card__title--skeleton"></h1>
-              <h1 className="movie-card__year--skeleton"></h1>
+              <div className="movie-card__title--skeleton"></div>
+              <div className="movie-card__year--skeleton"></div>
             </div>
             <div className="movie-card">
               <div className="movie-card__img--skeleton"></div>
-              <h1 className="movie-card__title--skeleton"></h1>
-              <h1 className="movie-card__year--skeleton"></h1>
+              <div className="movie-card__title--skeleton"></div>
+              <div className="movie-card__year--skeleton"></div>
             </div>
             <div className="movie-card">
               <div className="movie-card__img--skeleton"></div>
-              <h1 className="movie-card__title--skeleton"></h1>
-              <h1 className="movie-card__year--skeleton"></h1>
+              <div className="movie-card__title--skeleton"></div>
+              <div className="movie-card__year--skeleton"></div>
             </div>
             <div className="movie-card">
               <div className="movie-card__img--skeleton"></div>
-              <h1 className="movie-card__title--skeleton"></h1>
-              <h1 className="movie-card__year--skeleton"></h1>
+              <div className="movie-card__title--skeleton"></div>
+              <div className="movie-card__year--skeleton"></div>
             </div>
             <div className="movie-card">
               <div className="movie-card__img--skeleton"></div>
-              <h1 className="movie-card__title--skeleton"></h1>
-              <h1 className="movie-card__year--skeleton"></h1>
+              <div className="movie-card__title--skeleton"></div>
+              <div className="movie-card__year--skeleton"></div>
             </div>
             <div className="movie-card">
               <div className="movie-card__img--skeleton"></div>
-              <h1 className="movie-card__title--skeleton"></h1>
-              <h1 className="movie-card__year--skeleton"></h1>
+              <div className="movie-card__title--skeleton"></div>
+              <div className="movie-card__year--skeleton"></div>
             </div>
             <div className="movie-card">
               <div className="movie-card__img--skeleton"></div>
-              <h1 className="movie-card__title--skeleton"></h1>
-              <h1 className="movie-card__year--skeleton"></h1>
+              <div className="movie-card__title--skeleton"></div>
+              <div className="movie-card__year--skeleton"></div>
             </div>
           </>
         )}

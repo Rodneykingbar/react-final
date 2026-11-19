@@ -2,7 +2,7 @@ import React from 'react';
 import logo from "../assets/fes-logo.png"
 import "./styles/Nav.css"
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Search } from 'lucide-react';
 
 
@@ -21,10 +21,10 @@ const Nav = ({response, setResponse, searchTerm, setSearchTerm, apiKey}) => {
       }
     };
 
-    if (searchTerm, apiKey) {
+    if (searchTerm && apiKey) {
       fetchMovies();
     }
-  }, [searchTerm, apiKey]);
+  }, [searchTerm, setResponse, apiKey]);
 
   function search(e) {
     setSearchTerm(e.target.value); 

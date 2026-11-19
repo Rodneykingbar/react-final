@@ -23,7 +23,7 @@ const Movie = () => {
       }
     };
     findMovieById()
-  }, [id,])
+  }, [id, apiKey])
   
   
   return (
@@ -35,13 +35,13 @@ const Movie = () => {
       <div className="movie-details__content">
         <div className="movie-details__poster--wrapper">
           <div className="movie-details__poster-placeholder">
-            <img className="movie-details__poster--skeleton"/>
+            <img alt={idResponse.Title + " poster"} className="movie-details__poster--skeleton"/>
           </div>
           </div>
         <div className="movie-details__info">
           <div className="movie-details__text--wrapper">
-            <h1 className="movie-details__title--skeleton"></h1>
-            <h3 className="movie-details__plot"></h3>
+            <div className="movie-details__title--skeleton"></div>
+            <div className="movie-details__plot"></div>
             <div className='.movie-details__detail--skeleton'>
             <p className="movie-details__detail--skeleton"></p>
             <p className="movie-details__detail--skeleton"></p>
