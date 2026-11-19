@@ -9,9 +9,9 @@ body {
   font-weight: 300;
   margin: 0;
   padding: 0;
-  background-size: cover;
+  background-size:cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center;
 }
 
 body::after {
@@ -207,6 +207,7 @@ a {
   padding: 10px 15px;
   background: transparent;
   border-radius: 25px;
+  background-color: #b8d5dd
 }
 
 .sort:hover {
@@ -525,6 +526,13 @@ footer {
   .search-form__input {
     width: 320px;
   }
+  .sort {
+    padding: 10px 155px;
+  }
+  .movie-card {
+    padding: 10px;
+  }
+  
 }
 
 @media (max-width: 768px) {
@@ -536,5 +544,9 @@ footer {
   .movie-details__poster--wrapper {
     max-width: 300px;
     margin: 0 auto;
+  }
+
+  .movie-card {
+    padding: 10px;
   }
 }

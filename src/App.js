@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import React from "react";
 import Movie from "./pages/Movie";
+import Footer from "./components/Footer";
 
 function App() {
   const [response, setResponse] = useState();
@@ -34,6 +35,7 @@ function App() {
           <Route path={`/movie/:id`} element={<Movie />} />
         </Routes>
       </Router>
+      <Footer />
     </div>
   );
 }
