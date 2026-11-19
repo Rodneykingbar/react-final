@@ -23,6 +23,7 @@ function App() {
         console.error('Error fetching movies:', error);
       }
     };
+    fetchMovies()
   }, [searchTerm, response, apiKey]);
   return (
     <div className="App">
