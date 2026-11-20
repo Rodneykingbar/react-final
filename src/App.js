@@ -11,27 +11,57 @@ function App() {
   const [response, setResponse] = useState();
   const apiKey = process.env.REACT_APP_IMDB_KEY;
   const [searchTerm, setSearchTerm] = useState('');
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    const query = searchTerm.trim();
+    let cancelled = false;
+
+
+    if (query.length < 3) {
+      setResponse({ Search: [] });
+      setLoading(query.length > 0);
+      return () => {
+        cancelled = true;
+      };
+    }
+
     const fetchMovies = async () => {
+      setLoading(true);
+
       try {
-        const res = await axios.get(`https://omdbapi.com/?s=${searchTerm}&apikey=${apiKey}`);
-        
-        if (res.data.Response === "True") {
-          setResponse(res.data);
+        const res = await axios.get(`https://omdbapi.com/?s=${query}&apikey=${apiKey}`);
+
+        if (!cancelled) {
+          if (res.data.Response === "True") {
+            setResponse(res.data);
+          } else {
+            setResponse({ Search: [] });
+          }
         }
       } catch (error) {
-        console.error('Error fetching movies:', error);
+        if (!cancelled) {
+          console.error('Error fetching movies:', error);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
     };
-    fetchMovies()
-  }, [searchTerm, response, apiKey]);
+
+    fetchMovies();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [searchTerm, apiKey]);
   return (
     <div className="App">
-      <Nav response={response} setResponse={setResponse} searchTerm={searchTerm} setSearchTerm={setSearchTerm} apiKey={apiKey}/>
+      <Nav searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <Router>
         <Routes>
-          <Route path="/" element={<Home movie={response}/>} />
+          <Route path="/" element={<Home loading={loading} movie={response}/>} />
           <Route path={`/movie/:id`} element={<Movie />} />
         </Routes>
       </Router>

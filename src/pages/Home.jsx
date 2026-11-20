@@ -1,10 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import MovieCard from "../components/ui/MovieCard";
-import {useState} from "react"
 
-
-
-const Home = ({ movie }) => {
+const Home = ({ movie, loading }) => {
   const [sortOrder, setSortOrder] = useState("Sort");
 
   const movieList = Array.isArray(movie) ? movie : movie?.Search || [];
@@ -38,52 +35,13 @@ const Home = ({ movie }) => {
       </section>
 
       <div className="movies-grid">
-        {movieList.length > 0 ? (
+        {!loading ? (
           sortedMovies.map((film) => (
             <MovieCard key={film.imdbID} movie={[film]} />
           ))
         ) : (
           <>
-            <div className="movie-card">
-              <div className="movie-card__img--skeleton"></div>
-              <div className="movie-card__title--skeleton"></div>
-              <div className="movie-card__year--skeleton"></div>
-            </div>
-            <div className="movie-card">
-              <div className="movie-card__img--skeleton"></div>
-              <div className="movie-card__title--skeleton"></div>
-              <div className="movie-card__year--skeleton"></div>
-            </div>
-            <div className="movie-card">
-              <div className="movie-card__img--skeleton"></div>
-              <div className="movie-card__title--skeleton"></div>
-              <div className="movie-card__year--skeleton"></div>
-            </div>
-            <div className="movie-card">
-              <div className="movie-card__img--skeleton"></div>
-              <div className="movie-card__title--skeleton"></div>
-              <div className="movie-card__year--skeleton"></div>
-            </div>
-            <div className="movie-card">
-              <div className="movie-card__img--skeleton"></div>
-              <div className="movie-card__title--skeleton"></div>
-              <div className="movie-card__year--skeleton"></div>
-            </div>
-            <div className="movie-card">
-              <div className="movie-card__img--skeleton"></div>
-              <div className="movie-card__title--skeleton"></div>
-              <div className="movie-card__year--skeleton"></div>
-            </div>
-            <div className="movie-card">
-              <div className="movie-card__img--skeleton"></div>
-              <div className="movie-card__title--skeleton"></div>
-              <div className="movie-card__year--skeleton"></div>
-            </div>
-            <div className="movie-card">
-              <div className="movie-card__img--skeleton"></div>
-              <div className="movie-card__title--skeleton"></div>
-              <div className="movie-card__year--skeleton"></div>
-            </div>
+            <MovieCard movie={null} loading={loading} />
           </>
         )}
       </div>
